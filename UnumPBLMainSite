@@ -1,1 +1,134 @@
 
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.text {
+   position: absolute;
+   top: 8%;
+   margin: 15px;
+   font: 20px Optima;
+}
+.dropbtn {
+	background-color: DarkOliveGreen;
+	color: white;
+	padding: 20px;
+	font-size: 20px;
+	border: none;
+	cursor: pointer;
+}
+.dropbtn:hover, .dropbtn:focus {
+	background-color: DarkGreen;
+}
+.dropdown {
+	position: absolute;
+	display: inline-block;
+}
+.dropdown-content {
+	display: none;
+	background-color: gray;
+	border: 1px solid white;
+	min-width: 160px;
+	z-index: 1;
+}
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+.dropdown a:hover {background-color: #f1f1f1
+}
+#ChemistryDropdown {
+   position: absolute;
+   left: 0.4%;
+}
+#AlgebraIIDropdown {
+   position: absolute;
+   left: 20.5%;
+}
+#EnglishIIDropdown {
+   position: absolute;
+   left: 40%;
+}
+#USHistoryDropdown {
+   position: absolute;
+   left: 59%;
+}
+#SpanishIDropdown {
+   position: absolute;
+   left: 81.75%;
+}
+.show {display:block;}
+</style>
+</head>
+<body>
+<div class="dropdown">
+<button onclick="myFunction1()" class="dropbtn">Chemistry</button>
+  <div id="ChemistryDropdown" class="dropdown-content">
+	<a href="https://UnumPBlfinnlea.github.io/ChemistryQuizOne.html">Atomic Models</a>
+	<a href="https://UnumPBlfinnlea.github.io/ChemistryQuizTwo.html">Periodic Table Trends</a>
+	<a href="https://UnumPBlfinnlea.github.io/ChemistryQuizThree.html">Elements, Compounds, and Mixtures</a>
+  </div>
+ <button onclick="myFunction2()" class="dropbtn">Algebra II</button>
+  <div id="AlgebraIIDropdown" class="dropdown-content">
+	<a href="https://UnumPBlfinnlea.github.io/AlgebraIIQuizOne;.html">Simplifying Expressions</a>
+	<a href="https://UnumPBlfinnlea.github.io/AlgebraIIQuizTwo.html">Solving Equations</a>
+	<a href="https://UnumPBlfinnlea.github.io/AlgebraIIQuizThree.html">Graphs of Radical Functions</a>
+  </div>
+<button onclick="myFunction3()" class="dropbtn">English II</button>
+  <div id="EnglishIIDropdown" class="dropdown-content">
+	<a href="https://UnumPBlfinnlea.github.io/EnglishIIQuizOne.html">Sentence Fragments</a>
+	<a href="https://UnumPBlfinnlea.github.io/EnglishIIQuizTwo.html">Comma Splices, Semicolons, and Colons</a>
+	<a href="https://UnumPBlfinnlea.github.io/EnglishIIQuizThree.html">Subject and Verb Agreement</a>
+  </div>
+<button onclick="myFunction4()" class="dropbtn">U.S. History</button>
+  <div id="USHistoryDropdown" class="dropdown-content">
+	<a href="https://UnumPBlfinnlea.github.io/USHistoryQuizOne.html">World War II</a>
+  </div>
+<button onclick="myFunction5()" class="dropbtn">Spanish I</button>
+  <div id="SpanishIDropdown" class="dropdown-content">
+	<a href="https://UnumPBlfinnlea.github.io/SpanishIQuizOne.html">Spanish Grammar Rules</a>
+	<a href="https://UnumPBlfinnlea.github.io/SpanishIQuizTwo.html">Spanish Numbers: Dates, Time, and Math</a>
+	<a href="https://UnumPBlfinnlea.github.io/SpanishIQuizThree.html">Spanish Verb Conjugation</a>
+  </div>
+</div>
+<div class="text">
+<h2>Hello!</h2>
+<p>Welcome to our super-cool website where you can take quizzes on super interesting, exciting, and fun educational topics. Choose a subject above and then choose one of the topics to take a quiz on.</p>
+</div>
+
+<script>
+function myFunction1() {
+	document.getElementById("ChemistryDropdown").classList.toggle("show");
+}
+function myFunction2() {
+	document.getElementById("AlgebraIIDropdown").classList.toggle("show");
+}
+function myFunction3() {
+	document.getElementById("EnglishIIDropdown").classList.toggle("show");
+}
+function myFunction4() {
+	document.getElementById("USHistoryDropdown").classList.toggle("show");
+}
+function myFunction5() {
+	document.getElementById("SpanishIDropdown").classList.toggle("show");
+}
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+	var dropdowns = document.getElementsByClassName("dropdown-content");
+	var i;
+	for (i = 0; i < dropdowns.length; i++) {
+	  var openDropdown = dropdowns[i];
+	  if (openDropdown.classList.contains('show')) {
+		openDropdown.classList.remove('show');
+	  }
+	}
+  }
+}
+</script>
+</body>
+</html>
