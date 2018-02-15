@@ -1,1 +1,218 @@
 
+<h1>Spanish Grammar Rules</h1>
+<div class="quiz-container">
+  <div id="quiz"></div>
+</div>
+<button id="submit">Submit</button>
+<button id="previous">Previous Question</button>
+<button id="next">Next Question</button>
+<div id="results"></div>
+<a href="#"</a><button id="return">Return to Main Page</button>
+<script>
+(function() {
+  const myQuestions = [
+	{
+	  question: "1. How should this Spanish sentence be changed to be plural and feminine?  “Él es simpático.”",
+	  answers: {
+		a: "Ella es simpatica.",
+		b: "Ellas son simpáticas.",
+		c: "Ellas eres simpaticas.",
+	  },
+	  explanations: {
+		a: "-Incorrect- \n Explanation: \n “Él” (he) and “simpático” (friendly) are masculine. To change them to feminine form, they become “Ella” (she) and “simpática” (friendly). \n “Ella”, “es”, and “simpática” are singular. To change them to plural form, they become “Ellas” (they), “son” (are), and “simpáticas” (friendly). \n So the feminine and plural sentence would be “Ellas son simpáticas”.",
+		b: "-Correct-",
+		c: "-Incorrect- \n Explanation: \n “Él” (he) and “simpático” (friendly) are masculine. To change them to feminine form, they become “Ella” (she) and “simpática” (friendly). \n “Ella”, “es”, and “simpática” are singular. To change them to plural form, they become “Ellas” (they), “son” (are), and “simpáticas” (friendly). \n So the feminine and plural sentence would be “Ellas son simpáticas”.",
+	  },
+	  correctAnswer: "b"
+	},
+	{
+	  question: "How would “She eats a red apple.” be written in Spanish?",
+	  answers: {
+		a: "Ella come una rojo manzana.",
+		b: "Ella come una roja manzana.",
+		c: "Ella come una manzana roja.",
+	  },
+	  explanations: {
+		a: "-Incorrect- \n Explanation: \n “Ella” means “she”. \n “come” means “eats”. \n “un” or “una” means “a”. \n “rojo” or “roja” means “red”. \n “manzana” means “apple”. \n In Spanish grammar, adjectives come after the subject, so the sentence in Spanish would be, “Ella come una manzana roja.”",
+		b: "-Incorrect- \n Explanation: \n “Ella” means “she”. \n “come” means “eats”. \n “un” or “una” means “a”. \n “rojo” or “roja” means “red”. \n “manzana” means “apple”. \n In Spanish grammar, adjectives come after the subject, so the sentence in Spanish would be, “Ella come una manzana roja.”",
+		c: "-Correct-",
+	  },
+	  correctAnswer: "c"
+	},
+  ];
+function buildQuiz() {
+	const output = [];
+
+	myQuestions.forEach((currentQuestion, questionNumber) => {
+	  const answers = [];
+
+	  for (letter in currentQuestion.answers) {
+		answers.push(
+		  `<label>
+			 <input type="radio" name="question${questionNumber}" value="${letter}">
+			  ${letter} :
+			  ${currentQuestion.answers[letter]}
+		   </label>
+		   <br/>`
+		);
+	  }
+	  output.push(
+		`<div class="slide">
+		   <div class="question"> ${currentQuestion.question} </div>
+		   <div class="answers"> ${answers.join("")} </div>
+		 </div>`
+	  );
+	});
+	
+	quizContainer.innerHTML = output.join("");
+  }
+	// how do i get rid of results
+function showResults() {
+	const answerContainers = quizContainer.querySelectorAll(".answers");
+
+	let numCorrect = 0;
+
+	myQuestions.forEach((currentQuestion, questionNumber) => {
+	  const answerContainer = answerContainers[questionNumber];
+	  const selector = `input[name=question${questionNumber}]:checked`;
+	  const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+	});
+  }
+  function showSlide(n) {
+	slides[currentSlide].classList.remove("active-slide");
+	slides[n].classList.add("active-slide");
+	currentSlide = n;
+	
+	if (currentSlide === 0) {
+	  previousButton.style.display = "none";
+	} else {
+	  previousButton.style.display = "inline-block";
+	}
+	
+	nextButton.style.display = "none";
+	submitButton.style.display = "inline-block";
+  }
+
+  function showNextSlide() {
+	showSlide(currentSlide + 1);
+  }
+
+  function showPreviousSlide() {
+	showSlide(currentSlide - 1);
+  }
+
+  function checkResults() {
+	const answerContainers = quizContainer.querySelectorAll(".answers");
+	const answerContainer = answerContainers[currentSlide];
+	const selector = `input[name=question${currentSlide}]:checked`;
+	const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+	alert(myQuestions[currentSlide].explanations[userAnswer])
+	if(userAnswer === myQuestions[currentSlide].correctAnswer) {
+	  if (currentSlide === slides.length - 1) {
+		nextButton.style.display = "none";
+	  } else {
+		nextButton.style.display = "inline-block";
+	  };
+	};
+  }
+  const quizContainer = document.getElementById("quiz");
+  const resultsContainer = document.getElementById("results");
+
+  buildQuiz();
+
+  const previousButton = document.getElementById("previous");
+  const submitButton = document.getElementById("submit");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  showSlide(0);
+
+  submitButton.addEventListener("click", checkResults); //what goes after show?
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
+})();
+</script>
+  
+<style>
+h1{
+  font-size: 25px;
+  background-color: DarkOliveGreen;
+  color: white;
+  padding: 1%;
+}
+  body{
+  font: 25px Optima;
+  text-align: center;
+}
+.question{
+   text-align: left;
+   display: inline-block;
+   margin-left:18%;
+   margin-right: 8%;
+   margin-top: 2%;
+   margin-bottom: 5%;
+}
+#submit {
+   font: 20px Optima;
+   color: white;
+   background-color: DarkOliveGreen;
+   padding: 2%;
+   margin: 2%;
+   position: absolute;
+   left: 40%;
+   top: 80%;
+}
+#previous {
+   font: 20px Optima;
+   color: white;
+   background-color: DarkOliveGreen;
+   padding: 2%;
+   margin: 2%;
+   position: absolute;
+   top: 80%;
+   left: 50.5%;
+}
+#next {
+   font: 20px Optima;
+   color: white;
+   background-color: DarkOliveGreen;
+   padding: 2%;
+   margin: 2%;
+   position: absolute;
+   top: 80%;
+   left: 23%;
+}
+#return{
+   font: 20px Optima;
+   color: white;
+   background-color: DarkOliveGreen;
+   padding: 1.5%;
+   position: absolute;
+   left: 5px;
+   top: 1%;
+   margin-top: 6%;
+}
+.slide {
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  transition: opacity 0.5s;
+}
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+}
+.answers {
+  
+  text-align: left;
+  display: inline-block;
+}
+.answers label{
+  display: block;
+  margin-bottom: 5%;
+}
+</style>
