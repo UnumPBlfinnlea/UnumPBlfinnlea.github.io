@@ -1,6 +1,5 @@
 
-	
-<h1>Elements, Compounds, and Mixtures</h1>
+<h1>Periodic Table Trends</h1>
 <div class="quiz-container">
   <div id="quiz"></div>
 </div>
@@ -8,43 +7,37 @@
 <button id="previous">Previous Question</button>
 <button id="next">Next Question</button>
 <div id="results"></div>
-<a href="https://UnumPBlfinnlea.github.io/UnumPBLMainSite.html"</a><button id="return">Return to Main Page</button>
-
+<a href="https://UnumPBlfinnlea.github.io/UnumPBLMainSite.html"</a><button id="return">Return to Home Page</button>
 <script>
 (function() {
   const myQuestions = [
 	{
-	  question: "1. Which is a compound?",
+	  question: "1. As elements get farther to the right and top on the periodic table, their _ and _ increase.",
 	  answers: {
-		a: `<img src="http://www.ivyroses.com/Chemistry/Images/Element_Atoms_IvyRosecouk150.jpg" alt="" 
-		style="width:100px;height:100px;">`,
-		b: `<img src="http://www.ivyroses.com/Chemistry/Images/Compound_Molecules_IvyRosecouk150.jpg" alt=""
-	   style="width:100px;height:100px;">`,
-		c: `<img src="http://www.ivyroses.com/Chemistry/Images/Mixture_Atoms_IvyRosecouk150.jpg" alt=""
-		style="width:100px;height:100px;">`,
+		a: "atomic size, ionization energy",
+		b: "atomic size, electronegativity",
+		c: "ionization energy, electronegativity",
 	  },
 	  explanations: {
-		a: "-Incorrect-   -An element is made up of atom or molecules of a single element.  -A compound is made up of atoms of more than one kind of element bound together chemically.  -A mixture is made up of of elements and/or compounds of more than one kind of element physically intermingled. ",
-		b: "-Correct-",
-		c: "-Incorrect-   -An element is made up of atom or molecules of a single element.  -A compound is made up of atoms of more than one kind of element bound together chemically.  -A mixture is made up of of elements and/or compounds of more than one kind of element physically intermingled. "
-	  },
-	  correctAnswer: "b"
-	},
-	{
-	  question: `2. Is this an element, compound, or mixture? 
-	  <img src="http://www.ivyroses.com/Chemistry/Images/Mixture_Atoms_IvyRosecouk150.jpg" alt=""
-		style="width:100px;height:100px;">`,
-	  answers: {
-		a: "element",
-		b: "compound",
-		c: "mixture",
-	  },
-	  explanations: {
-		a: "-Incorrect-   -An element is made up of atom or molecules of a single element.  -A compound is made up of atoms of more than one kind of element bound together chemically.  -A mixture is made up of of elements and/or compounds of more than one kind of element physically intermingled. ",
-		b: "-Incorrect-   -An element is made up of atom or molecules of a single element.  -A compound is made up of atoms of more than one kind of element bound together chemically.  -A mixture is made up of of elements and/or compounds of more than one kind of element physically intermingled. ",
-		c: "-Correct-"
+		a: "-Incorrect- \n Explanation: \n Atomic Radius Trends: \n The atomic radius of the elements within a period generally decreases from left to right due to the number of protons and electrons across a period and increases from top to bottom due to electron shielding. \n Ionization Energy Trends: \n The ionization energy of the elements within a period generally increases from left to right due to valence shell stability and decreases from top to bottom due to electron shielding. \n Electronegativity trends: \n The electronegativity of the elements generally increases from left to right due to valence electrons and decreases from top to bottom due to atomic radius.",
+		b: "-Incorrect- \n Explanation: \n Atomic Radius Trends: \n The atomic radius of the elements within a period generally decreases from left to right due to the number of protons and electrons across a period and increases from top to bottom due to electron shielding. \n Ionization Energy Trends: \n The ionization energy of the elements within a period generally increases from left to right due to valence shell stability and decreases from top to bottom due to electron shielding. \n Electronegativity trends: \n The electronegativity of the elements generally increases from left to right due to valence electrons and decreases from top to bottom due to atomic radius.",
+		c: "-Correct-",
 	  },
 	  correctAnswer: "c"
+	},
+	{
+	  question: "2. As elements get farther to the left and bottom on the periodic table, their _ increases.",
+	  answers: {
+		a: "atomic size",
+		b: "ionization energy",
+		c: "electronegativity",
+	  },
+	  explanations: {
+		a: "-Correct-",
+		b: "-Incorrect- \n Explanation: \n Atomic Radius Trends: \n The atomic radius of the elements within a period generally decreases from left to right due to the number of protons and electrons across a period and increases from top to bottom due to electron shielding. \n Ionization Energy Trends: \n The ionization energy of the elements within a period generally increases from left to right due to valence shell stability and decreases from top to bottom due to electron shielding. \n Electronegativity trends: \n The electronegativity of the elements generally increases from left to right due to valence electrons and decreases from top to bottom due to atomic radius.",
+		c: "-Incorrect- \n Explanation: \n Atomic Radius Trends: \n The atomic radius of the elements within a period generally decreases from left to right due to the number of protons and electrons across a period and increases from top to bottom due to electron shielding. \n Ionization Energy Trends: \n The ionization energy of the elements within a period generally increases from left to right due to valence shell stability and decreases from top to bottom due to electron shielding. \n Electronegativity trends: \n The electronegativity of the elements generally increases from left to right due to valence electrons and decreases from top to bottom due to atomic radius.",
+	  },
+	  correctAnswer: "a"
 	},
   ];
 function buildQuiz() {
@@ -55,11 +48,12 @@ function buildQuiz() {
 
 	  for (letter in currentQuestion.answers) {
 		answers.push(
-		  `<div>
+		  `<label>
 			 <input type="radio" name="question${questionNumber}" value="${letter}">
 			  ${letter} :
 			  ${currentQuestion.answers[letter]}
-		   </div>`
+		   </label>
+		   <br/>`
 		);
 	  }
 	  output.push(
@@ -83,10 +77,7 @@ function showResults() {
 	  const selector = `input[name=question${questionNumber}]:checked`;
 	  const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 	});
-
-	
   }
-
   function showSlide(n) {
 	slides[currentSlide].classList.remove("active-slide");
 	slides[n].classList.add("active-slide");
@@ -144,28 +135,23 @@ function showResults() {
 </script>
   
 <style>
-
 h1{
-  font-weight: 300;
-  padding: 1%;
   font-size: 25px;
   background-color: DarkOliveGreen;
   color: white;
+  padding: 1%;
 }
   body{
   font: 25px Optima;
   text-align: center;
 }
 .question{
-   position: absolute;
-   left: 35%;
-   top: 13%;
-}
-.answers{
-   position: absolute;
-   left: 35%;
-   top: 30%;
    text-align: left;
+   display: inline-block;
+   margin-left:20%;
+   margin-right: 8%;
+   margin-top: 2%;
+   margin-bottom: 5%;
 }
 #submit {
    font: 20px Optima;
@@ -173,7 +159,6 @@ h1{
    background-color: DarkOliveGreen;
    padding: 2%;
    margin: 2%;
-   border: 2%;
    position: absolute;
    left: 40%;
    top: 80%;
@@ -184,10 +169,9 @@ h1{
    background-color: DarkOliveGreen;
    padding: 2%;
    margin: 2%;
-   border: 2%;
    position: absolute;
    top: 80%;
-   left: 50.5%;
+   left: 20%;
 }
 #next {
    font: 20px Optima;
@@ -195,30 +179,40 @@ h1{
    background-color: DarkOliveGreen;
    padding: 2%;
    margin: 2%;
-   border: 2%;
    position: absolute;
    top: 80%;
-   left: 23%;
+   left: 50.5%;
 }
 #return{
    font: 20px Optima;
    color: white;
    background-color: DarkOliveGreen;
-   padding: 1%;
-   border: 0px;
+   padding: 1.5%;
    position: absolute;
    left: 5px;
-   top: 5px;
+   top: 1%;
    margin-top: 6%;
 }
 .slide {
   width: 100%;
   z-index: 1;
   opacity: 0;
+  position: absolute;
+  top: 10%;
+  left: 5%;
   transition: opacity 0.5s;
 }
 .active-slide{
   opacity: 1;
   z-index: 2;
+}
+.answers {
+  
+  text-align: left;
+  display: inline-block;
+}
+.answers label{
+  display: block;
+  margin-bottom: 5%;
 }
 </style>
