@@ -1,1 +1,335 @@
 
+
+<h1>U.S. History: WW2</h1>
+<div class="quiz-container">
+  <div id="quiz"></div>
+</div>
+<div id="citation" style="position: absolute; left: 50%; top: 65%;"></div>
+<button id="submit">Submit</button>
+<button id="previous">Previous Question</button>
+<button id="next">Next Question</button>
+<div id="results"></div>
+<a href="https://UnumPBlfinnlea.github.io/UnumPBLMainSite.html"</a><button id="return">Return to Home Page</button>
+
+<script>
+(function() {
+  const myQuestions = [
+	{
+	  question: "1. What two countries were already involved in a military conflict before the beginning of World War II?",
+	  answers: {
+		a: "Japan & China ",
+		b: "Japan & India",
+		c: "Germany & Poland",
+		d: "Germany & France ",
+	  },
+	  explanations: {
+	   a: "-Correct- \n Explanation: \n Japan and China were already engaged in a military conflict before the outbreak of World War II. China was also involved in a civil war and spent most of World War II dealing with internal conflicts and repelling the advances of the Japanese. \n \n Citation: Taylor, Alan. 'World War II: Before the War'. 'The Atlantic', 19 Jun.2011. Web. 16 Feb. 2018.",
+	   b: "-Incorrect-",
+	   c: "-Incorrect-",
+	   d: "-Incorrect-",
+	  },
+	  citation: "citation",
+	  correctAnswer: "a"
+	},
+	{
+	  question: "2. What country lost the most lives during WW2?",
+	  answers: {
+		a: "The USA",
+		b: "Great Britain",
+		c: "The Soviet Union",
+		d: "Germany",
+	  },
+	  explanations: {
+	   a: "-Incorrect-",
+	   b: "-Incorrect-",
+	   c: "-Correct- \n Explanation: \n With approximately 27 Million total fatalities (both military and civilian), the Soviet Union lost the most lives during World War II. China was next with approximately 11 Million total fatalities, followed by Germany with approximately 7 Million total fatalities. \n \n Citation: 'World War II Casualties'. 'Wikipedia', 13 Feb. 2018. Web. 16 Feb. 2018",
+	   d: "-Incorrect-",
+	  },
+	  correctAnswer: "c"
+	},
+		{
+	  question: "3. After WW2, Germany was divided into how many portions?",
+	  answers: {
+		a: "2",
+		b: "3",
+		c: "4",
+	  },
+	  explanations: {
+	   a: "-Incorrect-",
+	   b: "-Correct- \n Explanation: \n After its defeat in World War II, Germany was divided into four zones under the control of the United States, Britain, France and the former Soviet Union. \n \n Citations: 'Division of Germany after WWII'. 'South China Morning Post', 24 Feb. 1993, Web. 16 Feb. 2018",
+	   c: "-Incorrect-",
+	   d: "-Incorrect-",
+	  },
+	  correctAnswer: "b"
+	},
+		{
+	  question: "4. Which leader did not attend the Yalta Conference?",
+	  answers: {
+		a: "Franklin Rosevelt",
+		b: "Adolf Hitler",
+		c: "Winston Churchill",
+		d: "Joseph Stallin",
+	  },
+	  explanations: {
+	   a: "-Incorrect-",
+	   b: "-Correct- \n Explanation: \n The Yalta Conference was the meeting after WW2 of the heads of government of the United States, the United Kingdom and the Soviet Union for the purpose of discussing Germany and Europe's postwar reorganization. The three states were represented by President Franklin D. Roosevelt, Prime Minister Winston Churchill and Premier Joseph Stalin. \n \n Citation: 'The Yalta Conference'. 'Wikipedia', 7 Feb. 2018. Web. 16 Feb. 2018.",
+	   c: "-Incorrect-",
+	   d: "-Incorrect-",
+	  },
+	  correctAnswer: "b"
+	},
+		{
+	  question: "5. What was the nationality of Adolf Hitler?",
+	  answers: {
+		a: "Danish",
+		b: "Polish",
+		c: "Austria-Hungarian",
+		d: "Russian",
+	  },
+	  explanations: {
+	   a: "-Incorrect-",
+	   b: "-Incorrect-",
+	   c: "-Correct- \n Explanation: \n Hitler was born in Austria, which was then part of Austria-Hungary, and was raised near Linz. He moved to Germany in 1913 and recieved German citezenship in 1932. \n \n Citation: 'Adolf Hitler'. 'Wikipedia'. 14 Feb. 2018, Web. 16 Feb. 2018.",
+	   d: "-Incorrect-",
+	  },
+	  correctAnswer: "c"
+	},
+		{
+	  question: "6. Whose murder served as a pretext for Stalin to launch the Great Purge?",
+	  answers: {
+		a: "Grigory Zinoviev",
+		b: "Sergey Kirov",
+		c: "Lev Kamenev",
+		d: "Karl Radek",
+	  },
+	  explanations: {
+	   a: "-Incorrect-",
+	   b: "-Correct- \n Explanation: \n On 1 December 1934, Sergey Kirov, the leader of the Communist Party in Leningrad, was shot and killed by a gunman at his offices in the Smolny Institute. Stalin used the murder Kirov's death served as one of the pretexts for Stalin launching the Great Purge. \n \n Citation: 'Great Purge'. 'Wikipedia'. 15 Feb. 2018. Web. 16 Feb. 2018.",
+	   c: "-Incorrect-",
+	   d: "-Incorrect-",
+	  },
+	  correctAnswer: "b"
+	},
+		{
+	  question: "7. How much money was spent on the Manhattan project overall?",
+	  answers: {
+		a: "$8 million",
+		b: "$2 billion",
+		c: "$10 billion",
+	  },
+	  explanations: {
+	   a: "-Incorrect-",
+	   b: "-Correct- \n Explanation: \n The Manhattan Project began in 1939, and grew to employ more than 130,000 people and cost nearly $2 billion dollars, approximatly $22 billion in today's monentary value. \n \n Citation: 'Manhattan Project'. 'Wikipedia'. 11 Feb. 2018. Web. 16 Feb. 2018.",
+	   c: "-Incorrect-",
+	  },
+	  correctAnswer: "b"
+	},
+		{
+	  question: "8. All of the following were reasons for the post World War II economic boom except __?",
+	  answers: {
+		a: "Increased production of consumer goods",
+		b: "Rapid growth in technology",
+		c: "Inflation and higher prices",
+		d: "Purchases made on credit",
+	  },
+	  explanations: {
+	   a: "-Incorrect-",
+	   b: "-Incorrect-",
+	   c: "-Correct- \n Explanation: \n The post–World War II economic expansion was a period of strong economic growth beginning after World War II and ending with the 1973–75 recession. It was caused by increased production, rapid growth in technology, and increased use of credit to make purchases. \n \n Citation: 'Post WWII economic expansion'. 'Wikipedia'. 16 Feb. 2018. Web. 16 Feb. 2018.",
+	   d: "-Incorrect-",
+	  },
+	  correctAnswer: "c"
+	},
+		{
+	  question: "9. Which organization was set up in 1945 to help solve conflicts between nations?",
+	  answers: {
+		a: "Warsaw Pact",
+		b: "United Nations",
+		c: "Marshall Plan",
+		d: "National Alliance of Nations",
+	  },
+	  explanations: {
+	   a: "-Incorrect-",
+	   b: "-Correct- \n Explanation: \n In 1945, representatives of 50 countries met in San Francisco at the United Nations Conference on International Organization to draw up the United Nations Charter. The organization was created to help maintain  worldwide peace and security, and develop relations among nations.  \n \n Citation: 'History of the United Nations'. 'UN.org'. The United Nations Web. 16 Feb. 2018.",
+	   c: "-Incorrect-",
+	   d: "-Incorrect-",
+	  },
+	  correctAnswer: "b"
+	},
+  ];
+function buildQuiz() {
+	const output = [];
+
+	myQuestions.forEach((currentQuestion, questionNumber) => {
+	  const answers = [];
+
+	  for (letter in currentQuestion.answers) {
+		answers.push(
+		  `<label>
+			 <input type="radio" name="question${questionNumber}" value="${letter}">
+			  ${letter} :
+			  ${currentQuestion.answers[letter]}
+		   </label>
+		   <br/>`
+		);
+	  }
+	  output.push(
+		`<div class="slide">
+		   <div class="question"> ${currentQuestion.question} </div>
+		   <div class="answers"> ${answers.join("")} </div>
+		   <div class="citation"></div>
+		 </div>`
+	  );
+	});
+	
+	quizContainer.innerHTML = output.join("");
+  }
+	// how do i get rid of results
+function showResults() {
+	const answerContainers = quizContainer.querySelectorAll(".answers");
+
+	let numCorrect = 0;
+
+	myQuestions.forEach((currentQuestion, questionNumber) => {
+	  const answerContainer = answerContainers[questionNumber];
+	  const selector = `input[name=question${questionNumber}]:checked`;
+	  const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+	});
+  }
+  function showSlide(n) {
+	slides[currentSlide].classList.remove("active-slide");
+	slides[n].classList.add("active-slide");
+	currentSlide = n;
+	
+	if (currentSlide === 0) {
+	  previousButton.style.display = "none";
+	} else {
+	  previousButton.style.display = "inline-block";
+	}
+	
+	nextButton.style.display = "none";
+	submitButton.style.display = "inline-block";
+  }
+
+  function showNextSlide() {
+	showSlide(currentSlide + 1);
+  }
+
+  function showPreviousSlide() {
+	showSlide(currentSlide - 1);
+  }
+
+  function checkResults() {
+	const answerContainers = quizContainer.querySelectorAll(".answers");
+	const answerContainer = answerContainers[currentSlide];
+	const selector = `input[name=question${currentSlide}]:checked`;
+	const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+	alert(myQuestions[currentSlide].explanations[userAnswer])
+	if(userAnswer === myQuestions[currentSlide].correctAnswer) {
+	  if (currentSlide === slides.length - 1) {
+		nextButton.style.display = "none";
+	  } else {
+		nextButton.style.display = "inline-block";
+	  };
+	};
+  }
+  const quizContainer = document.getElementById("quiz");
+  const resultsContainer = document.getElementById("results");
+
+  buildQuiz();
+
+  const previousButton = document.getElementById("previous");
+  const submitButton = document.getElementById("submit");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  showSlide(0);
+
+  submitButton.addEventListener("click", checkResults);
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
+})();
+</script>
+  
+<style>
+h1{
+  font-size: 25px;
+  background-color: DarkOliveGreen;
+  color: white;
+  padding: 1%;
+}
+  body{
+  font: 25px Optima;
+  text-align: center;
+}
+.question{
+   text-align: left;
+   display: inline-block;
+   margin-left: 20%;
+   margin-right: 10%;
+   margin-top: 2%;
+   margin-bottom: 5%;
+}
+#submit {
+   font: 20px Optima;
+   color: white;
+   background-color: DarkOliveGreen;
+   padding: 2%;
+   margin: 2%;
+   position: absolute;
+   left: 40%;
+   top: 80%;
+}
+#previous {
+   font: 20px Optima;
+   color: white;
+   background-color: DarkOliveGreen;
+   padding: 2%;
+   margin: 2%;
+   position: absolute;
+   top: 80%;
+   left: 20%;
+}
+#next {
+   font: 20px Optima;
+   color: white;
+   background-color: DarkOliveGreen;
+   padding: 2%;
+   margin: 2%;
+   position: absolute;
+   top: 80%;
+   left: 50.5%;
+}
+#return{
+   font: 20px Optima;
+   color: white;
+   background-color: DarkOliveGreen;
+   padding: 1.5%;
+   position: absolute;
+   left: 5px;
+   top: 1%;
+   margin-top: 6%;
+}
+.slide {
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  transition: opacity 0.5s;
+}
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+}
+.answers {
+  text-align: left;
+  display: inline-block;
+  margin-right: 5%;
+}
+.answers label{
+  display: block;
+}
+</style>
